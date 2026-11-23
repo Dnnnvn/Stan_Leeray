@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stan Leeray · @s.leeray · Obra en Piel y Papel · CDMX</title>
+  <meta name="description"
+    content="Stan Leeray (@s.leeray) — Galería de autor en CDMX. Obra en piel (tatuajes) y obra gráfica original en tinta negra.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Stan Leeray · @s.leeray">
+  <meta property="og:description" content="Tinta sobre piel y papel. Obra única e ilustración original en CDMX.">
+  <meta property="og:image" content="img/T4.png">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+
+  <!-- ==================================================================
+       1. INTRO LIMPIA (SIN CALAVERA) + CONSTELACIÓN DE SVGs FINOS (2.5 s)
+       ================================================================== -->
+  <div class="preloader" id="preloader" role="status" aria-label="Cargando galería de Stan Leeray">
+    <div class="pre__curtain pre__curtain--left" aria-hidden="true"></div>
+    <div class="pre__curtain pre__curtain--right" aria-hidden="true"></div>
+
+    <!-- Múltiples micro-SVGs finos trazándose alrededor (estrellas, animales 1 línea, agujas, destellos) -->
+    <div class="pre__swarm" id="preSwarm" aria-hidden="true"></div>
+
+    <!-- 4 esquinas SVG de grabado ultrafino (sin calavera) que se abren hacia afuera -->
+    <svg class="pre__corner pre__corner--tl" viewBox="0 0 80 80" aria-hidden="true">
+      <path class="pre__stroke pre__stroke--fast" d="M 6 32 L 6 6 L 32 6" pathLength="100" />
+      <path class="pre__stroke pre__stroke--mid" d="M 54 18 L 28 44 L 22 50 L 30 46 L 56 20 Z" pathLength="100" />
+      <path class="pre__stroke pre__stroke--late" d="M 22 50 C 16 58 34 62 46 52" pathLength="100" />
+    </svg>
+
+    <svg class="pre__corner pre__corner--tr" viewBox="0 0 80 80" aria-hidden="true">
+      <path class="pre__stroke pre__stroke--fast" d="M 48 6 L 74 6 L 74 32" pathLength="100" />
+      <path class="pre__stroke pre__stroke--mid" d="M 42 18 L 44 38 L 64 40 L 44 42 L 42 62 L 40 42 L 20 40 L 40 38 Z" pathLength="100" />
+      <path class="pre__stroke pre__stroke--late" d="M 31 29 L 53 51 M 53 29 L 31 51" pathLength="100" />
+    </svg>
+
+    <svg class="pre__corner pre__corner--bl" viewBox="0 0 80 80" aria-hidden="true">
+      <path class="pre__stroke pre__stroke--fast" d="M 6 48 L 6 74 L 32 74" pathLength="100" />
+      <path class="pre__stroke pre__stroke--mid" d="M 22 52 C 30 34 46 38 42 26 C 38 16 52 14 58 24 C 62 32 50 44 58 54" pathLength="100" />
+      <path class="pre__stroke pre__stroke--late" d="M 58 54 L 63 58 M 58 54 L 55 60" pathLength="100" />
+    </svg>
+
+    <svg class="pre__corner pre__corner--br" viewBox="0 0 80 80" aria-hidden="true">
+      <path class="pre__stroke pre__stroke--fast" d="M 48 74 L 74 74 L 74 48" pathLength="100" />
+      <path class="pre__stroke pre__stroke--mid" d="M 18 42 C 30 28 50 28 62 42 C 50 56 30 56 18 42 Z" pathLength="100" />
+      <path class="pre__stroke pre__stroke--late" d="M 40 34 C 46 34 49 39 47 45 C 45 50 38 52 34 48 C 30 44 33 36 39 36" pathLength="100" />
+    </svg>
+
+    <!-- Centro limpio sin calavera: estrella fina + línea desde el centro + firma + contador 00 — 100 -->
+    <div class="pre__center">
+      <svg class="pre__emblem" viewBox="0 0 64 64" aria-hidden="true">
+        <path class="pre__stroke pre__stroke--fast" d="M 32 4 L 34.5 29.5 L 60 32 L 34.5 34.5 L 32 60 L 29.5 34.5 L 4 32 L 29.5 29.5 Z" pathLength="100" />
+        <path class="pre__stroke pre__stroke--mid" d="M 16 16 L 48 48 M 48 16 L 16 48" pathLength="100" />
+      </svg>
+
+      <div class="pre__line" aria-hidden="true"><span></span></div>
+
+      <div class="pre__sign" aria-hidden="true">
+        <span class="pre__brand">STAN <em>LEERAY</em></span>
+        <span class="pre__handle">@s.leeray</span>
+      </div>
+
+      <div class="pre__counter" aria-hidden="true">
+        <span id="preCount">00</span>
+        <span class="pre__dash">—</span>
+        <span>100</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Textura sutil de papel algodón -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <div class="page-wrap">
+
+    <!-- ================================================================
+         DIBUJOS DECORATIVOS DE ./img/fondo + EXPLOSIÓN DE MICRO-SVGs Y LÍNEAS
+         ================================================================ -->
+    <div class="fondos-field" id="fondosField" aria-hidden="true"></div>
+    <div class="ink-field" id="inkField" aria-hidden="true"></div>
+
+    <!-- NAVEGACIÓN MINIMALISTA -->
+    <header class="topbar" id="topbar">
+      <a href="#inicio" class="brand" aria-label="Stan Leeray, inicio">STAN LEERAY</a>
+      <span class="topbar__mid">@S.LEERAY · CIUDAD DE MÉXICO</span>
+      <nav class="topnav" aria-label="Principal">
+        <a href="#obra">Piezas</a>
+        <a href="#lenguaje">Lenguaje</a>
+        <a href="#cotizar">Agendar</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ==============================================================
+           HERO MONUMENTAL PROTAGONISTA + 1er DIBUJO DE ./img/fondo ASOMÁNDOSE
+           ============================================================== -->
+      <section class="hero" id="inicio">
+        <!-- Primer dibujo de img/fondo asomándose limpiamente en la esquina inferior derecha -->
+        <div class="hero__fondo-peek" data-parallax="0.06" aria-hidden="true">
+          <img src="img/fondo/icn1.png" width="698" height="936" decoding="async" fetchpriority="high" alt="">
+        </div>
+
+        <!-- Composición viva de líneas finas y micro-SVGs en la esquina superior derecha del Hero -->
+        <div class="hero__tr-art" id="heroTrArt" aria-hidden="true"></div>
+
+        <div class="wrap hero__cover">
+          <div class="hero__top">
+            <span class="mono">CIUDAD DE MÉXICO</span>
+            <a class="mono hero__ig" href="https://instagram.com/s.leeray" target="_blank" rel="noopener"
+              data-link="instagram">@s.leeray</a>
+            <span class="mono">ESTUDIO DE AUTOR</span>
+          </div>
+          <div class="center-rule center-rule--hero" aria-hidden="true"><span></span></div>
+
+          <div class="hero__monument">
+            <h1 class="hero__title">
+              <span class="hero__word">STAN</span>
+              <span class="hero__word hero__word--it"><em>LEERAY</em></span>
+            </h1>
+            <div class="hero__identity">
+              <a class="hero__id-handle" href="https://instagram.com/s.leeray" target="_blank" rel="noopener" data-link="instagram">@s.leeray</a>
+              <span class="hero__id-sep" aria-hidden="true">//</span>
+              <span class="hero__id-city">Ciudad de México</span>
+            </div>
+          </div>
+
+          <div class="hero__subrow">
+            <p class="hero__lead">Tinta sobre piel y obra gráfica original. Sin catálogos: tu concepto traducido a línea expresiva y vacío.</p>
+            <div class="hero__links">
+              <a href="#obra" class="ink-link">Ver piezas en piel ↓</a>
+              <a href="#cotizar" class="ink-link ink-link--solid">Agendar por correo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Línea divisoria animada desde el centro hacia los costados -->
+      <div class="hairline-sep" aria-hidden="true">
+        <span class="hairline-sep__base"></span>
+        <span class="hairline-sep__expand"></span>
+        <span class="hairline-sep__origin"></span>
+      </div>
+
+      <!-- ==============================================================
+           01. PIEZAS EN PIEL (TATUAJES) — PRIMERO TRAS EL HERO (21 = 7×3)
+           ============================================================== -->
+      <section class="feed-section" id="obra" aria-label="Piezas en piel: tatuajes">
+        <div class="wrap">
+          <header class="feed__toolbar" data-reveal>
+            <div>
+              <span class="mono">01 // ARCHIVO DE TATUAJES</span>
+              <h2 class="feed__title">Piezas <em>en piel</em></h2>
+            </div>
+            <span class="mono curated-block__meta" id="metaPiel">21 PIEZAS EN PIEL</span>
+          </header>
+
+          <ul class="art-grid" id="galleryPiel"></ul>
+
+          <noscript>
+            <p class="gallery__empty">Activa JavaScript para explorar el archivo, o visita @s.leeray en Instagram.
+            </p>
+          </noscript>
+        </div>
+      </section>
+
+      <!-- Línea divisoria animada desde el centro -->
+      <div class="hairline-sep hairline-sep--alt" aria-hidden="true">
+        <span class="hairline-sep__base"></span>
+        <span class="hairline-sep__expand"></span>
+        <span class="hairline-sep__origin"></span>
+      </div>
+
+      <!-- ==============================================================
+           02. LENGUAJE DEL ESTUDIO — DIBUJOS Y TRAZOS ORIGINALES (SIN FILTRO)
+           ============================================================== -->
+      <section class="showcase-section" id="lenguaje" aria-label="Lenguaje del estudio: dibujos y trazos originales">
+        <div class="wrap">
+          <header class="showcase__head" data-reveal>
+            <div>
+              <span class="mono">02 // LENGUAJE DEL ESTUDIO</span>
+              <h2 class="showcase__title">Dibujos y trazos <em>originales</em></h2>
+              <p class="showcase__lead">La línea propia y lenguaje gráfico que define cada pieza creada en el estudio.</p>
+            </div>
+            <div class="showcase__controls" aria-label="Controles del visor de dibujos">
+              <span class="mono showcase__counter" id="showCounter">01 / 06</span>
+              <button type="button" class="carousel__btn" id="carPrev" aria-label="Dibujo anterior">&#8592;</button>
+              <button type="button" class="carousel__btn" id="carNext" aria-label="Dibujo siguiente">&#8594;</button>
+            </div>
+          </header>
+
+          <div class="showcase" id="drawingShowcase" data-reveal>
+            <div class="showcase__stage" id="showcaseStage" role="region" aria-live="polite" aria-label="Dibujo original en exhibición"></div>
+            <div class="showcase__foot">
+              <span class="mono showcase__caption" id="showCaption"></span>
+              <div class="showcase__dots" id="showDots" role="tablist" aria-label="Seleccionar dibujo"></div>
+            </div>
+            <div class="showcase__bar" aria-hidden="true"><span id="showProgress"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Línea divisoria animada desde el centro antes de Agendamiento -->
+      <div class="hairline-sep" aria-hidden="true">
+        <span class="hairline-sep__base"></span>
+        <span class="hairline-sep__expand"></span>
+        <span class="hairline-sep__origin"></span>
+      </div>
+
+      <!-- ==============================================================
+           5. AGENDAMIENTO ESTRUCTURADO DIRECTO AL CORREO (ESTUDIO CDMX)
+           ============================================================== -->
+      <section class="sheet-section" id="cotizar">
+        <div class="wrap wrap--narrow">
+          <header class="sheet__head" data-reveal>
+            <span class="mono">AGENDAMIENTO ESTRUCTURADO // ESTUDIO EN CDMX</span>
+            <h2 class="sheet__title">Envía tu <em>solicitud</em></h2>
+            <p class="sheet__lead">Sesiones exclusivamente en Ciudad de México. Estructura aquí tu concepto, soporte, medidas y referencia para enviarlo directo al correo del estudio (<span class="mono-inline"
+                data-email-inline>contacto@stanleeray.com</span>).</p>
+          </header>
+
+          <form class="sheet" id="quoteForm" novalidate data-reveal>
+            <div class="field">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required>
+              <small class="error" data-error-for="nombre"></small>
+            </div>
+
+            <fieldset class="field">
+              <legend>Tipo de proyecto</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="tipo" value="Tatuaje personalizado" checked><span>Tatuaje personalizado</span></label>
+                <label class="choice"><input type="radio" name="tipo" value="Ilustración original"><span>Ilustración original</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="idea">Concepto o idea</label>
+              <textarea id="idea" name="idea" rows="3"
+                placeholder="Cuéntanos qué elemento, historia o atmósfera quieres representar para traducirlo a la línea del estudio."
+                required></textarea>
+              <small class="error" data-error-for="idea"></small>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="zona">Zona del cuerpo / formato</label>
+                <select id="zona" name="zona" required>
+                  <option value="">Seleccionar…</option>
+                  <option>Antebrazo</option>
+                  <option>Brazo (parte alta)</option>
+                  <option>Brazo completo / Manga</option>
+                  <option>Espalda</option>
+                  <option>Pecho / costillas</option>
+                  <option>Muslo</option>
+                  <option>Pierna / pantorrilla</option>
+                  <option>Mano / muñeca</option>
+                  <option>Cuello / nuca</option>
+                  <option>Papel / formato digital (Ilustración)</option>
+                  <option>Otra</option>
+                </select>
+                <small class="error" data-error-for="zona"></small>
+              </div>
+
+              <div class="field">
+                <label for="tamano">Tamaño aprox. (cm)</label>
+                <input type="number" id="tamano" name="tamano" inputmode="numeric" min="1" max="200"
+                  placeholder="Ej. 18" required>
+                <small class="error" data-error-for="tamano"></small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="telefono">Tu correo o WhatsApp <span class="opt">(opcional)</span></label>
+              <input type="text" id="telefono" name="telefono" autocomplete="email"
+                placeholder="nombre@correo.com o 55 1234 5678">
+            </div>
+
+            <div class="field">
+              <label for="referencia">Referencia visual <span class="opt">(opcional)</span></label>
+              <label class="upload" for="referencia" id="uploadBox">
+                <input type="file" id="referencia" name="referencia" accept="image/*">
+                <img id="uploadPreview" alt="Vista previa de tu referencia" hidden>
+                <span class="upload__text" id="uploadText">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 16V4m0 0 4 4m-4-4L8 8" />
+                    <path d="M4 17v2h16v-2" />
+                  </svg>
+                  Adjuntar imagen o boceto de referencia
+                </span>
+              </label>
+              <small class="hint" id="uploadHint">La referencia se guarda en tu ficha local. Recuerda adjuntar el
+                archivo también dentro del correo al enviarlo.</small>
+            </div>
+
+            <p class="form__status" id="formStatus" role="status" aria-live="polite" hidden></p>
+
+            <div class="sheet__actions">
+              <button type="submit" class="btn btn--ink" data-channel="email">
+                <span>Enviar solicitud por correo</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+              <button type="submit" class="btn btn--line" data-channel="copy">
+                <span>Solo guardar y copiar ficha</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Estado de éxito (correo estructurado + copiar ficha) -->
+          <div class="success" id="quoteSuccess" hidden>
+            <p class="mono">SOLICITUD ESTRUCTURADA</p>
+            <h3>Lista para enviarse al estudio</h3>
+            <p id="successMsg">Tu ficha quedó guardada y el correo fue prellenado con todos tus datos.</p>
+            <p class="success__warn" id="successWarn" hidden></p>
+            <pre class="success__preview" id="successPreview"></pre>
+            <div class="success__actions">
+              <a class="btn btn--ink" id="successMail" href="#">Abrir correo del estudio ↗</a>
+              <button type="button" class="btn btn--line" id="copySummary">Copiar texto del correo</button>
+            </div>
+            <button type="button" class="linkbtn" id="newQuote">Enviar otra solicitud</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA DISCRETO CON FIRMA CONCEPTUAL -->
+    <footer class="footer">
+      <div class="wrap">
+        <p class="footer__manifesto">Sin catálogo. <em>Tu concepto</em> traducido a línea, vacío y tinta irrepetible.</p>
+        <div class="footer__row">
+          <div class="footer__left">
+            <a href="https://instagram.com/s.leeray" target="_blank" rel="noopener" data-link="instagram">@s.leeray</a>
+            <a href="#" data-link="email"><span data-email-label>contacto@stanleeray.com</span></a>
+            <span>Ciudad de México (CDMX)</span>
+          </div>
+          <div class="footer__right">
+            <span class="footer__copy">© <span id="year"></span> Stan Leeray</span>
+            <button type="button" class="admin-link" id="adminOpen">ESTUDIO // PIN</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX LIMPIO SOBRE PAPEL BLANCO -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de obra" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">&#8592;</button>
+    <figure class="lightbox__figure">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Siguiente">&#8594;</button>
+  </div>
+
+  <!-- MODAL PIN (ESTUDIO // PIN) -->
+  <div class="modal" id="pinModal" role="dialog" aria-modal="true" aria-labelledby="pinTitle" hidden>
+    <!-- Decoración SVG sutil y formal en esquinas y espacios vacíos alrededor del PIN -->
+    <div class="modal__ornaments" aria-hidden="true">
+      <!-- 4 esquinas arquitectónicas finas -->
+      <svg class="modal__corner modal__corner--tl" viewBox="0 0 88 88" style="--mop:.48">
+        <path class="modal__line-ghost" d="M 8 52 L 8 8 L 52 8 M 18 18 L 36 18 M 18 18 L 18 36"/>
+        <path class="modal__line-live" d="M 8 52 L 8 8 L 52 8" pathLength="100"/>
+      </svg>
+      <svg class="modal__corner modal__corner--tr" viewBox="0 0 88 88" style="--mop:.42">
+        <path class="modal__line-ghost" d="M 36 8 L 80 8 L 80 52 M 70 18 L 52 18 M 70 18 L 70 36"/>
+        <path class="modal__line-live" d="M 36 8 L 80 8 L 80 52" pathLength="100" style="--mdel:-3.2s"/>
+      </svg>
+      <svg class="modal__corner modal__corner--bl" viewBox="0 0 88 88" style="--mop:.40">
+        <path class="modal__line-ghost" d="M 8 36 L 8 80 L 52 80 M 18 70 L 36 70 M 18 70 L 18 52"/>
+        <path class="modal__line-live" d="M 8 36 L 8 80 L 52 80" pathLength="100" style="--mdel:-6.4s"/>
+      </svg>
+      <svg class="modal__corner modal__corner--br" viewBox="0 0 88 88" style="--mop:.50">
+        <path class="modal__line-ghost" d="M 36 80 L 80 80 L 80 36 M 70 70 L 52 70 M 70 70 L 70 52"/>
+        <path class="modal__line-live" d="M 36 80 L 80 80 L 80 36" pathLength="100" style="--mdel:-1.8s"/>
+      </svg>
+
+      <!-- Líneas finas animadas en los flancos -->
+      <svg class="modal__hairline modal__hairline--h1" viewBox="0 0 220 12" preserveAspectRatio="none" style="--mop:.34;--mdur:15s;--mdel:-2s">
+        <path class="modal__line-ghost" d="M 0 6 L 220 6 M 110 2 L 110 10"/>
+        <path class="modal__line-live" d="M 0 6 L 220 6" pathLength="100"/>
+      </svg>
+      <svg class="modal__hairline modal__hairline--h2" viewBox="0 0 220 12" preserveAspectRatio="none" style="--mop:.30;--mdur:17s;--mdel:-6s">
+        <path class="modal__line-ghost" d="M 0 6 L 220 6 M 68 2 L 68 10 M 164 2 L 164 10"/>
+        <path class="modal__line-live" d="M 0 6 L 220 6" pathLength="100"/>
+      </svg>
+      <svg class="modal__hairline modal__hairline--v1" viewBox="0 0 12 180" preserveAspectRatio="none" style="--mop:.36;--mdur:16s;--mdel:-4s">
+        <path class="modal__line-ghost" d="M 6 0 L 6 180 M 2 90 L 10 90"/>
+        <path class="modal__line-live" d="M 6 0 L 6 180" pathLength="100"/>
+      </svg>
+      <svg class="modal__hairline modal__hairline--v2" viewBox="0 0 12 180" preserveAspectRatio="none" style="--mop:.28;--mdur:18s;--mdel:-8s">
+        <path class="modal__line-ghost" d="M 6 0 L 6 180 M 2 56 L 10 56"/>
+        <path class="modal__line-live" d="M 6 0 L 6 180" pathLength="100"/>
+      </svg>
+
+      <!-- Micro-SVGs discretos (sin calaveras) con opacidad suave 0.25–0.55 -->
+      <svg class="modal__glyph modal__glyph--1" viewBox="0 0 36 36" style="--mop:.52;--msz:22px;--mdur:18s;--mdel:-1.5s">
+        <path d="M 18 2 L 18 34 M 2 18 L 34 18 M 7 7 L 29 29 M 29 7 L 7 29 M 18 14 L 22 18 L 18 22 L 14 18 Z"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--2" viewBox="0 0 38 38" style="--mop:.44;--msz:22px;--mdur:20s;--mdel:-5s">
+        <path d="M 32 6 L 14 24 L 8 30 L 16 26 L 34 8 Z M 8 30 C 4 34 16 36 28 29"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--3" viewBox="0 0 36 36" style="--mop:.34;--msz:19px;--mdur:17s;--mdel:-3.2s">
+        <path d="M 18 2 L 20 16 L 34 18 L 20 20 L 18 34 L 16 20 L 2 18 L 16 16 Z"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--4" viewBox="0 0 36 36" style="--mop:.48;--msz:18px;--mdur:19s;--mdel:-7.4s">
+        <path d="M 18 4 L 24 18 L 18 32 L 12 18 Z M 4 18 L 10 18 M 26 18 L 32 18"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--5" viewBox="0 0 42 30" style="--mop:.30;--msz:25px;--mdur:22s;--mdel:-4.1s">
+        <path d="M 3 15 C 12 4 30 4 39 15 C 30 26 12 26 3 15 Z M 21 10 C 25 10 27 13 26 17 C 25 20 20 21 17 19 C 15 17 16 13 19 12"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--6" viewBox="0 0 42 30" style="--mop:.38;--msz:25px;--mdur:21s;--mdel:-8.8s">
+        <path d="M 2 20 C 8 8 16 8 21 15 C 26 7 34 6 40 12 M 6 19 C 13 13 17 15 21 18 C 25 14 30 12 36 14"/>
+      </svg>
+    </div>
+
+    <div class="modal__panel modal__panel--sm">
+      <svg class="modal__panel-mark modal__panel-mark--bl" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M 2 12 L 2 26 L 16 26"/>
+      </svg>
+      <svg class="modal__panel-mark modal__panel-mark--br" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M 12 26 L 26 26 L 26 12"/>
+      </svg>
+      <button class="modal__close" data-close aria-label="Cerrar">&times;</button>
+      <div class="modal__kicker">
+        <svg class="modal__kicker-star" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M 12 2 L 13.5 10.5 L 22 12 L 13.5 13.5 L 12 22 L 10.5 13.5 L 2 12 L 10.5 10.5 Z"/>
+        </svg>
+        <p class="mono">ESTUDIO // ACCESO</p>
+      </div>
+      <h2 id="pinTitle" class="modal__title">Ingresar PIN</h2>
+      <div class="modal__rule" aria-hidden="true"><span></span></div>
+      <form id="pinForm" autocomplete="off">
+        <input type="password" id="pinInput" inputmode="numeric" maxlength="12" placeholder="••••" aria-label="PIN"
+          class="pin__input">
+        <small class="error" id="pinError"></small>
+        <button type="submit" class="btn btn--ink btn--block">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- PANEL PRIVADO DE SOLICITUDES -->
+  <div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle" hidden>
+    <!-- Decoración SVG discreta en el perímetro del panel administrativo -->
+    <div class="modal__ornaments modal__ornaments--admin" aria-hidden="true">
+      <svg class="modal__corner modal__corner--tl" viewBox="0 0 88 88" style="--mop:.36">
+        <path class="modal__line-ghost" d="M 8 44 L 8 8 L 44 8"/>
+        <path class="modal__line-live" d="M 8 44 L 8 8 L 44 8" pathLength="100"/>
+      </svg>
+      <svg class="modal__corner modal__corner--tr" viewBox="0 0 88 88" style="--mop:.32">
+        <path class="modal__line-ghost" d="M 44 8 L 80 8 L 80 44"/>
+        <path class="modal__line-live" d="M 44 8 L 80 8 L 80 44" pathLength="100" style="--mdel:-4s"/>
+      </svg>
+      <svg class="modal__corner modal__corner--bl" viewBox="0 0 88 88" style="--mop:.32">
+        <path class="modal__line-ghost" d="M 8 44 L 8 80 L 44 80"/>
+        <path class="modal__line-live" d="M 8 44 L 8 80 L 44 80" pathLength="100" style="--mdel:-7s"/>
+      </svg>
+      <svg class="modal__corner modal__corner--br" viewBox="0 0 88 88" style="--mop:.38">
+        <path class="modal__line-ghost" d="M 44 80 L 80 80 L 80 44"/>
+        <path class="modal__line-live" d="M 44 80 L 80 80 L 80 44" pathLength="100" style="--mdel:-2.5s"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--a1" viewBox="0 0 36 36" style="--mop:.40;--msz:18px;--mdur:20s;--mdel:-2s">
+        <path d="M 18 2 L 20 16 L 34 18 L 20 20 L 18 34 L 16 20 L 2 18 L 16 16 Z"/>
+      </svg>
+      <svg class="modal__glyph modal__glyph--a2" viewBox="0 0 36 36" style="--mop:.34;--msz:18px;--mdur:22s;--mdel:-6s">
+        <path d="M 18 4 L 24 18 L 18 32 L 12 18 Z M 4 18 L 10 18 M 26 18 L 32 18"/>
+      </svg>
+    </div>
+
+    <div class="modal__panel modal__panel--lg">
+      <button class="modal__close" data-close aria-label="Cerrar">&times;</button>
+      <header class="admin__head">
+        <div>
+          <div class="modal__kicker">
+            <svg class="modal__kicker-star" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M 12 2 L 12 22 M 2 12 L 22 12 M 5 5 L 19 19 M 19 5 L 5 19"/>
+            </svg>
+            <p class="mono">ESTUDIO // STAN LEERAY</p>
+          </div>
+          <h2 id="adminTitle" class="modal__title">Solicitudes recibidas</h2>
+          <p class="modal__lead" id="adminSummary"></p>
+        </div>
+        <div class="admin__tools">
+          <button type="button" class="btn btn--line btn--sm" id="adminExport">Exportar JSON</button>
+          <button type="button" class="btn btn--line btn--sm" id="adminLock">Cerrar sesión</button>
+        </div>
+      </header>
+      <div class="modal__rule modal__rule--admin" aria-hidden="true"><span></span></div>
+      <div class="filters filters--admin" id="adminFilters">
+        <button class="chip is-active" data-status="all">Todas</button>
+        <button class="chip" data-status="Pendiente">Pendiente</button>
+        <button class="chip" data-status="Cotizada">Cotizada</button>
+        <button class="chip" data-status="Agendada">Agendada</button>
+      </div>
+      <p class="admin__note" id="adminNote"></p>
+      <div class="admin__tablewrap">
+        <table class="admin__table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Proyecto</th>
+              <th>Ref.</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="adminBody"></tbody>
+        </table>
+      </div>
+      <p class="admin__empty" id="adminEmpty" hidden>Aún no hay solicitudes en este navegador.</p>
+
+      <!-- Cierre gráfico formal ultrafino en la base del panel de solicitudes -->
+      <div class="admin__ledger-foot" aria-hidden="true">
+        <svg class="admin__foot-mark" viewBox="0 0 42 22">
+          <path d="M 1 6 L 1 21 L 24 21 M 34 14 L 36 18 L 41 19 L 36 20 L 34 22 L 32 20 L 27 19 L 32 18 Z"/>
+        </svg>
+        <span class="admin__foot-line"></span>
+        <svg class="admin__foot-star" viewBox="0 0 28 28">
+          <path d="M 14 2 L 15.5 12.5 L 26 14 L 15.5 15.5 L 14 26 L 12.5 15.5 L 2 14 L 12.5 12.5 Z M 8 8 L 20 20 M 20 8 L 8 20"/>
+        </svg>
+        <span class="admin__foot-line"></span>
+        <svg class="admin__foot-mark" viewBox="0 0 42 22">
+          <path d="M 18 21 L 41 21 L 41 6 M 8 15 L 12 19 L 8 22 L 4 19 Z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zoom de referencia (admin) -->
+  <div class="zoom" id="zoom" hidden><img id="zoomImg" alt="Referencia del cliente"></div>
+
+  <script src="gallery-data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
